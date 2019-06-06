@@ -1,0 +1,332 @@
+.home {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  > div {
+    //flex-container
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // align-items: center;
+    > div > div {
+      //column's flex-container
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      > div {
+        //   All Column
+        width: 100%;
+      }
+    }
+    > :nth-child(1) {
+      border-right: 1px solid rgba(183, 195, 214, 0.3);
+      > div {
+        // column-1
+        > :nth-child(1) {
+          // header
+          height: 70px;
+          border-bottom: 1px solid rgba(183, 195, 214, 0.3);
+          box-shadow: 6px -3px 25px 0 rgba(183, 195, 214, 0.3);
+          background: #4ca8e6;
+          > h2 {
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            padding: 20px 40px;
+            width: 130px;
+            height: 25px;
+          }
+          svg {
+            display: none;
+          }
+        }
+        > :nth-child(2) {
+          margin: 20px 0px;
+        }
+        > :nth-child(3) {
+          hr {
+            border: 1px solid rgba(183, 195, 214, 0.3);
+          }
+        }
+        > :nth-child(4) {
+          > div {
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            > :nth-child(1) {
+              padding: 15px 10px;
+            }
+            > div {
+              padding: 10px;
+              font-size: 14px;
+              text-align: left;
+              color: #444;
+              &.active {
+                border-left: 5px solid #4ca8e6;
+                color: #000;
+              }
+              p {
+                cursor: pointer;
+                transition: all ease-in-out 0.2s;
+              }
+            }
+          }
+          :hover {
+            > div {
+              > p {
+                transform: scale(0.9);
+              }
+              :hover {
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+    > :nth-child(2) {
+      flex-grow: 0;
+      box-shadow: 16px -6px 11px -15px rgba(183, 195, 214, 0.3);
+      z-index: 100000000;
+      > div {
+        position: relative;
+        height: 100%;
+        // column-2
+        > :nth-child(1) {
+          // header
+          height: 70px;
+          border-bottom: 1px solid rgba(183, 195, 214, 0.3);
+          background: #4ca8e6;
+          background: #ffffff;
+          height: 69px;
+          .search {
+            height: 100%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            svg {
+              margin: 0px 20px;
+              color: #eee;
+            }
+            input {
+              border: 0px;
+              width: 100%;
+              height: 100%;
+              color: #444;
+              font-size: 1.4em;
+              text-transform: capitalize;
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+        }
+        > :nth-child(2) {
+          overflow-y: scroll;
+          flex-direction: column;
+          position: absolute;
+          width: 98%;
+          height: calc(100% - 68px);
+          top: 68px;
+          margin: 0px 0px 0px -1%;
+
+          &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
+            background-color: rgba(255, 255, 255, 0);
+            border: 0;
+          }
+
+          &::-webkit-scrollbar {
+            width: 8px;
+            background-color: rgba(255, 255, 255, 0);
+            border: 0;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: rgba(183, 195, 214, 0.7);
+            border-radius: 10px;
+            border: 0;
+          }
+        }
+      }
+    }
+    > :nth-child(3) {
+      flex-grow: 2;
+      z-index: 1;
+      width: 33%;
+      height: 100%;
+      > div {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        // background: #f2f4f8;
+        // column-3
+        > div {
+          background: #f2f4f8;
+          position: absolute;
+          width: 100%;
+        }
+        > :nth-child(1) {
+          // header
+          height: 69px;
+          border-bottom: 1px solid rgba(183, 195, 214, 0.3);
+          box-shadow: 6px -3px 25px 0 rgba(183, 195, 214, 0.3);
+          z-index: -1;
+          top: 0;
+          left: 0;
+          > div {
+            padding-left: 20px;
+          }
+        }
+        > :nth-child(2) {
+          top: 70px;
+          height: calc(100% - 128px);
+          overflow-x: hidden;
+          overflow-y: scroll;
+          left: 0;
+          > div {
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: space-between;
+            justify-content: center;
+            padding: 20px;
+          }
+          &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
+            background-color: rgba(255, 255, 255, 0);
+            border: 0;
+          }
+
+          &::-webkit-scrollbar {
+            width: 8px;
+            background-color: rgba(255, 255, 255, 0);
+            border: 0;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: #4ca8e6;
+            border-radius: 10px;
+            border: 0;
+          }
+        }
+        > :nth-child(3) {
+          bottom: -0%;
+          left: 0;
+          background: #fff;
+          border-top: 1px solid rgba(183, 195, 214, 0.3);
+          border-bottom: 1px solid rgba(183, 195, 214, 0.3);
+          padding: 10px 0;
+          transition: all ease-in-out 0.3s;
+          &.focus {
+            background: #4ca8e6;
+            color: #fff;
+            textarea,
+            textarea::placeholder,
+            path {
+              color: #fff !important;
+            }
+          }
+          > div {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            > :nth-child(1),
+            > :nth-child(3) {
+              width: 10%;
+              text-align: center;
+              svg {
+                font-size: 2em;
+                path {
+                  color: #a4a3b1;
+                }
+              }
+              button {
+                margin: auto;
+                background: #ffd460;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+              }
+            }
+            > :nth-child(2) {
+              width: 80%;
+              textarea {
+                width: 100%;
+                height: 30px;
+                resize: none;
+                border: 0;
+                background: transparent;
+                &:focus {
+                  outline: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .more-details {
+    position: absolute;
+    top: 30%;
+    right: 2%;
+    font-size: 29px;
+    display: none;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .home {
+    .more-details {
+      display: block;
+    }
+    > div > div {
+      width: 100%;
+    }
+    div > :nth-child(1) > div > :nth-child(1) {
+      position: relative;
+      h2 {
+        margin: auto;
+      }
+      svg {
+        position: absolute;
+        top: 28%;
+        font-size: 30px;
+        right: 2%;
+        display: block;
+        path {
+          color: #fff;
+        }
+      }
+    }
+    > div > :nth-child(2) {
+      height: 300px;
+    }
+  }
+  .home > div > :nth-child(3) > div {
+    // position: relative;
+    height: calc(100% - 78px) !important;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .home > div > :nth-child(3) > div > :nth-child(3) > div > :nth-child(1),
+  .home > div > :nth-child(3) > div > :nth-child(3) > div > :nth-child(3) {
+    position: relative;
+    svg {
+      top: -13px;
+      font-size: 26px;
+      right: 18px;
+      // display: block;
+    }
+  }
+  .home > div > :nth-child(3) > div > :nth-child(2) {
+    height: calc(100% - 116px);
+  }
+  .home > div > :nth-child(3) > div > :nth-child(3) {
+    bottom: -2%;
+  }
+}
